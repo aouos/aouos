@@ -1,8 +1,6 @@
 # Logo Design
 
-## Design inspiration
-
----
+## 🔮 Design inspiration
 
 Letter Transformation Shape
 
@@ -11,9 +9,7 @@ Letter Transformation Shape
 - U 🟩
 - O 🟣
 
-## Coloring scheme
-
----
+## 🌈 Coloring scheme
 
 Color scheme source github night mode
 
@@ -22,9 +18,7 @@ Color scheme source github night mode
 - green: `#2EA44F`
 - red: `#E34C26`
 
-## Effect picture
-
----
+## 🚀 Effect picture
 
 Preview design results
 
