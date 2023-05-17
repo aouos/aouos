@@ -1,0 +1,21 @@
+{
+  "name": "aouos",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "keywords": [
+    "blog",
+    "website",
+    "notes"
+  ],
+  "author": "aouos",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "1.0.0-alpha.60"
+  }
+}
