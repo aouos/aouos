@@ -4,20 +4,23 @@ import sidebar from './sidebar';
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'AouoCode',
-  description: 'my personal website',
+  description: 'My Planet of Knowledge',
   themeConfig: {
     logo: '/logo.png',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Blog', link: '/blog/' },
-      { text: 'Front-End', link: '/notes/' },
+      { text: 'HTML & CSS', link: '/basic/' },
+      { text: 'JavaScript', link: '/javascript/' },
+      { text: 'Vue', link: '/vue/' },
+      { text: 'React', link: '/react/' },
       { text: 'Algorithm', link: '/algo/' },
     ],
 
     sidebar,
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
+      { icon: 'github', link: 'https://github.com/aouocode/notes' },
     ],
   },
 });

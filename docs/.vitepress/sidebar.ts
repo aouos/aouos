@@ -1,6 +1,27 @@
 export default {
-  // front end
-  '/notes/': [
+  // Blog
+  '/blog/': [
+    {
+      text: '计算机网络',
+      items: [
+        {
+          text: 'HTTP 三次握手',
+          link: '#',
+        },
+      ],
+    },
+    {
+      text: '前端工程化',
+      items: [
+        {
+          text: 'Webpack',
+          link: '#',
+        },
+      ],
+    },
+  ],
+  // HTML & CSS
+  '/basic/': [
     {
       text: 'HTML',
       items: [
@@ -19,6 +40,8 @@ export default {
         },
       ],
     },
+  ],
+  '/javascript/': [
     {
       text: 'JavaScript',
       items: [
@@ -37,29 +60,50 @@ export default {
         },
       ],
     },
+  ],
+  // Vue
+  '/vue/': [
     {
-      text: 'TypeScript',
-      items: [
-        {
-          text: '联合类型与交叉类型',
-          link: '#',
-        },
-      ],
+      text: 'Composition API',
+      item: [],
     },
     {
-      text: '前端工程化',
+      text: 'Vue-Router',
+      item: [],
+    },
+    {
+      text: 'Pinia',
+      item: [],
     },
   ],
-  // algorithms
+  // React
+  '/react/': [
+    {
+      text: '虚拟 DOM',
+      item: [],
+    },
+    {
+      text: 'Hooks',
+      item: [],
+    },
+    {
+      text: 'React-Router',
+      item: [],
+    },
+  ],
+  // Algorithms
   '/algo/': [
     {
       text: '复杂度分析',
+      item: [],
     },
     {
       text: '基本数据结构',
+      item: [],
     },
     {
       text: '算法思想',
+      item: [],
     },
   ],
 };
