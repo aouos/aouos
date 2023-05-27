@@ -17,4 +17,13 @@ export const blogMenus = [
       },
     ],
   },
+  {
+    text: '设计模式',
+    items: [
+      {
+        text: '发布订阅模式',
+        link: '#',
+      },
+    ],
+  },
 ];

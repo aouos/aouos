@@ -7,13 +7,13 @@
  * Colors
  * -------------------------------------------------------------------------- */
 
- :root {
-  --vp-c-brand: #646cff;
-  --vp-c-brand-light: #747bff;
-  --vp-c-brand-lighter: #9499ff;
-  --vp-c-brand-lightest: #bcc0ff;
-  --vp-c-brand-dark: #535bf2;
-  --vp-c-brand-darker: #454ce1;
+:root {
+  --vp-c-brand: #55a885;
+  --vp-c-brand-light: #79b59a;
+  --vp-c-brand-lighter: #a1c2b2;
+  --vp-c-brand-lightest: #c2cfc8;
+  --vp-c-brand-dark: #3c8267;
+  --vp-c-brand-darker: #265c49;
   --vp-c-brand-dimm: rgba(100, 108, 255, 0.08);
 }
 
@@ -39,16 +39,16 @@
 
 :root {
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(
-    120deg,
-    #bd34fe 30%,
-    #41d1ff
+  --vp-home-hero-name-background: linear-gradient(
+    -15deg,
+    #ee9ae5 10%,
+    #5961f9 100%
   );
 
   --vp-home-hero-image-background-image: linear-gradient(
-    -45deg,
-    #bd34fe 50%,
-    #47caff 50%
+    135deg,
+    #43cbff 10%,
+    #9708cc 100%
   );
   --vp-home-hero-image-filter: blur(40px);
 }
@@ -119,4 +119,3 @@
 .dark .vp-doc .custom-block a {
   transition: color 0.25s;
 }
-

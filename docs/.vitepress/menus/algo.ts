@@ -13,10 +13,12 @@ export const algoMenus = [
   },
   {
     text: 'LeetCode',
+    collapsible: true,
+    collapsed: false,
     items: [
       {
         text: '0001-两数之和',
-        link: '',
+        link: '/algo/lc-0001-两数之和.md',
       },
     ],
   },

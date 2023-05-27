@@ -6,8 +6,10 @@ title: Home
 
 hero:
   name: AouoCode
-  text: Front-end knowledge learning notes
-  tagline: Blog, HTML, CSS, JavaScript, Vue, React, Algorithms...
+  text: Front-end Learning Notes
+  tagline: Blog, HTML, CSS, JavaScript, Vue, React, Algorithms, Design Patterns...
+  image:
+    src: /image.svg
   actions:
     - theme: brand
       text: Get Started
