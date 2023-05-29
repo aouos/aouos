@@ -1,18 +1,40 @@
 export const basicMenus = [
   {
-    text: 'HTML',
+    text: '🖥️ HTML',
+    collapsible: true,
+    collapsed: false,
     items: [
       {
-        text: 'HTML 标签',
-        link: '#',
+        text: 'HTML 起步',
+        link: './001-HTML-起步.md',
+      },
+      {
+        text: 'HTML 元素',
+        link: './002-HTML-元素.md',
+      },
+      {
+        text: 'HTML 属性',
+        link: './003-HTML-属性.md',
+      },
+      {
+        text: '实体字符',
+        link: './004-实体字符.md',
+      },
+      {
+        text: '元素语义化',
+        link: './005-元素语义化.md',
+      },
+      {
+        text: 'SEO 优化',
+        link: './006-SEO-优化.md',
       },
     ],
   },
   {
-    text: 'CSS',
+    text: '🌈 CSS',
     items: [
       {
-        text: '层叠与继承',
+        text: '起步',
         link: '#',
       },
     ],
