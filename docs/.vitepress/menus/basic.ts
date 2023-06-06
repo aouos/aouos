@@ -34,8 +34,8 @@ export const basicMenus = [
     text: '🌈 CSS',
     items: [
       {
-        text: '起步',
-        link: '#',
+        text: '移动端适配',
+        link: './201-移动端适配.md',
       },
     ],
   },
