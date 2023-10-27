@@ -6,7 +6,7 @@ title: Home
 
 hero:
   name: AouoCode
-  text: Front-end Learning Notes
+  text: The road to programming learning
   tagline: Blog, HTML, CSS, JavaScript, Vue, React, Algorithms, Design Patterns...
   image:
     src: /image.svg
@@ -16,5 +16,5 @@ hero:
       link: /blog/
     - theme: alt
       text: View on GitHub
-      link: https://github.com/aouocode/notes
+      link: https://github.com/aouos/notes
 ---

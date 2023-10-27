@@ -31,19 +31,17 @@ export default defineConfig({
 
     footer: {
       message: '❤️',
-      copyright: 'Copyright © 2023-Present AouoCode',
+      copyright: 'Copyright © 2023 - Present AouoCode',
     },
 
     editLink: {
       pattern: 'https://github.com/aouocode/notes/edit/main/docs/:path',
-      text: 'GitHub 编辑此内容',
+      text: '在 GitHub 编辑此内容',
     },
 
     lastUpdatedText: '最后更新于',
 
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/aouocode/notes' },
-    ],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/aouos/notes' }],
   },
 
   lastUpdated: true,

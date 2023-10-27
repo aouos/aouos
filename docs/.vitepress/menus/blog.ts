@@ -1,5 +1,16 @@
 export const blogMenus = [
   {
+    text: '技术文档',
+    collapsible: true,
+    collapsed: false,
+    items: [
+      {
+        text: 'Canvas 高亮批注实现',
+        link: '#',
+      },
+    ],
+  },
+  {
     text: '计算机网络',
     items: [
       {
