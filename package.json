@@ -2,6 +2,7 @@
   "name": "aouos",
   "version": "0.0.1",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "vitepress dev docs",
@@ -11,11 +12,12 @@
   "keywords": [
     "blog",
     "website",
-    "notes"
+    "notes",
+    "works"
   ],
   "author": "aouos",
   "license": "MIT",
   "devDependencies": {
-    "vitepress": "1.0.0-beta.1"
+    "vitepress": "1.0.0-rc.27"
   }
 }

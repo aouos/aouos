@@ -2,12 +2,12 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
-title: Home
+title: 🎉
 
 hero:
   name: AouoCode
-  text: The road to programming learning
-  tagline: Blog, HTML, CSS, JavaScript, Vue, React, Algorithms, Design Patterns...
+  text: Hey, I am Aouos, a programmer who likes fantastic ideas
+  tagline: Blog, Algorithm Notes, Coding, Project works, About me...
   image:
     src: /image.svg
   actions:
@@ -16,5 +16,5 @@ hero:
       link: /blog/
     - theme: alt
       text: View on GitHub
-      link: https://github.com/aouos/notes
+      link: https://github.com/aouos/aouos
 ---

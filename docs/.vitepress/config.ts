@@ -1,10 +1,11 @@
 import { defineConfig } from 'vitepress';
-import sidebar from './sidebar';
+import blog from './blog';
+import algo from './algo';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'zh-CN',
-  title: 'AouoCode',
+  title: 'Aouos',
   description: 'My Planet of Knowledge',
   head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }]],
   themeConfig: {
@@ -12,11 +13,9 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Blog', link: '/blog/' },
-      { text: 'HTML & CSS', link: '/basic/' },
-      { text: 'JavaScript', link: '/javascript/' },
-      { text: 'Vue', link: '/vue/' },
-      { text: 'React', link: '/react/' },
       { text: 'Algorithm', link: '/algo/' },
+      { text: 'Works', link: '/works/' },
+      { text: 'About', link: '/about/' },
     ],
 
     outline: {
@@ -27,7 +26,10 @@ export default defineConfig({
       provider: 'local',
     },
 
-    sidebar,
+    sidebar: {
+      blog,
+      algo,
+    },
 
     footer: {
       message: '❤️',
@@ -41,7 +43,7 @@ export default defineConfig({
 
     lastUpdatedText: '最后更新于',
 
-    socialLinks: [{ icon: 'github', link: 'https://github.com/aouos/notes' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/aouos' }],
   },
 
   lastUpdated: true,
