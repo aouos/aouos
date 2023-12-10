@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitepress';
 import blog from './blog';
+import notes from './notes';
 import algo from './algo';
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'zh-CN',
   title: 'Aouos',
@@ -10,12 +10,11 @@ export default defineConfig({
   head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }]],
   themeConfig: {
     logo: '/logo.svg',
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Blog', link: '/blog/' },
+      { text: 'Notes', link: '/notes/' },
       { text: 'Algorithm', link: '/algo/' },
       { text: 'Works', link: '/works/' },
-      { text: 'About', link: '/about/' },
     ],
 
     outline: {
@@ -28,12 +27,8 @@ export default defineConfig({
 
     sidebar: {
       blog,
+      notes,
       algo,
-    },
-
-    footer: {
-      message: '❤️',
-      copyright: 'Copyright © 2023 - Present AouoCode',
     },
 
     editLink: {
