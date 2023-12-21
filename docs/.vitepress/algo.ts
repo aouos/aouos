@@ -45,6 +45,14 @@ export default [
         text: '0001-两数之和',
         link: '/algo/lc-0001-两数之和.md',
       },
+      {
+        text: '0020-有效的括号',
+        link: '/algo/lc-0020-有效的括号.md',
+      },
+      {
+        text: '0136-只出现一次的数字',
+        link: '/algo/lc-0136-只出现一次的数字.md',
+      },
     ],
   },
 ];

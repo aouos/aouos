@@ -11,10 +11,10 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
     nav: [
-      { text: 'Blog', link: '/blog/' },
-      { text: 'Notes', link: '/notes/' },
-      { text: 'Algorithm', link: '/algo/' },
-      { text: 'Works', link: '/works/' },
+      { text: '博客', link: '/blog/' },
+      { text: '笔记', link: '/notes/' },
+      { text: '算法', link: '/algo/' },
+      { text: '作品集', link: '/works/' },
     ],
 
     outline: {
