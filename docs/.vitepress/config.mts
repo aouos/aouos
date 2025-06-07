@@ -1,19 +1,16 @@
 import { defineConfig } from 'vitepress';
 import blog from './blog';
-import notes from './notes';
-import algo from './algo';
+import collection from './collection';
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: 'Aouos',
+  title: 'AOUOS',
   description: 'My Planet of Knowledge',
-  head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }]],
+  head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/image.svg' }]],
   themeConfig: {
-    logo: '/logo.svg',
     nav: [
       { text: '博客', link: '/blog/' },
-      { text: '笔记', link: '/notes/' },
-      { text: '算法', link: '/algo/' },
+      { text: '收藏夹', link: '/collection/' },
       { text: '作品集', link: '/works/' },
     ],
 
@@ -27,13 +24,12 @@ export default defineConfig({
 
     sidebar: {
       blog,
-      notes,
-      algo,
+      collection,
     },
 
     editLink: {
-      pattern: 'https://github.com/aouocode/notes/edit/main/docs/:path',
-      text: '在 GitHub 编辑此内容',
+      pattern: 'https://github.com/aouos/aouos/edit/main/docs/:path',
+      text: '在 GitHub 编辑此页',
     },
 
     lastUpdatedText: '最后更新于',

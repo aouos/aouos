@@ -2,12 +2,12 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
-title: 🎉
+title: X
 
 hero:
   name: AouoCode
-  text: Hey, I am Aouos, a programmer who likes fantastic ideas
-  tagline: Blog, Algorithm Notes, Coding, Project works, About me...
+  text: Hey, I am Bolt Guo, a programmer who likes fantastic ideas
+  tagline: Coding...
   image:
     src: /image.svg
   actions:
