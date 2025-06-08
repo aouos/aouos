@@ -39,4 +39,5 @@ export default defineConfig({
   },
 
   lastUpdated: true,
+  ignoreDeadLinks: true,
 });
