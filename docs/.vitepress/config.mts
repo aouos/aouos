@@ -10,6 +10,7 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '博客', link: '/blog/' },
+      { text: 'AI', link: '/ai/' },
       { text: '收藏夹', link: '/collection/' },
       { text: '作品集', link: '/works/' },
     ],
