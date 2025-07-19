@@ -2,10 +2,8 @@
 import { Github, Menu, X } from '@lucide/astro';
 ---
 
-<header
-  class="bg-white border-b-2 border-black fixed top-0 w-full z-50 font-mono"
->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<header class="bg-white border-b-2 fixed top-0 w-full z-50 font-mono">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8">
     <div class="flex items-center justify-between h-20">
       <div class="flex-shrink-0">
         <a href="/" class="text-2xl"> AOUOS </a>
@@ -22,11 +20,7 @@ import { Github, Menu, X } from '@lucide/astro';
         </nav>
 
         <div class="hidden md:block ml-8">
-          <button
-            type="button"
-            id="github-btn-desktop"
-            class="inline-flex items-center justify-center rounded-lg px-4 py-2 border-2 border-black cursor-pointer transition-all shadow-[4px_4px_0px_rgb(0,0,0)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[3px_3px_0px_rgb(0,0,0)]"
-          >
+          <button type="button" id="github-btn-desktop" class="primary-button">
             <span class="sr-only">GitHub</span>
             <Github class="h-6 w-6" />
           </button>
@@ -36,7 +30,7 @@ import { Github, Menu, X } from '@lucide/astro';
           <button
             type="button"
             id="mobile-menu-btn"
-            class="bg-white inline-flex items-center justify-center p-2 rounded-lg border-2 border-black cursor-pointer transition-all shadow-[4px_4px_0px_rgb(0,0,0)] active:translate-x-[1px] active:translate-y-[1px]"
+            class="primary-button active-button"
             aria-controls="mobile-menu"
             aria-expanded="false"
           >
@@ -50,7 +44,7 @@ import { Github, Menu, X } from '@lucide/astro';
   </div>
 
   <div class="hidden md:hidden" id="mobile-menu">
-    <div class="px-4 py-6 space-y-2 border-t-2 border-black">
+    <div class="px-4 py-6 space-y-2 border-t-2">
       <a href="/" class="block text-center text-base py-2"> Home </a>
       <a href="/works" class="block text-center text-base py-2"> Works </a>
       <a href="/blog" class="block text-center text-base py-2"> Blog </a>
@@ -59,7 +53,7 @@ import { Github, Menu, X } from '@lucide/astro';
         <button
           type="button"
           id="github-btn-mobile"
-          class="inline-flex items-center justify-center rounded-lg border-2 border-black px-4 py-2 text-center shadow-[4px_4px_0px_rgb(0,0,0)] w-full"
+          class="primary-button w-full"
         >
           <Github class="h-5 w-5 mr-2" />
           <span>GitHub</span>

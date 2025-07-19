@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('blog');
@@ -8,7 +8,7 @@ const sortedPosts = allPosts.sort(
 );
 ---
 
-<BaseLayout title="Blog" description="my blog posts">
+<Layout title="Blog" description="my blog posts">
   <h1>Blog Posts</h1>
 
   <div class="posts-list">
@@ -33,7 +33,7 @@ const sortedPosts = allPosts.sort(
       ))
     }
   </div>
-</BaseLayout>
+</Layout>
 
 <style>
   .posts-list {
