@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/Layout.astro';
+---
+
+<BaseLayout title="AOUOS">
+  <div
+    class="grid md:grid-cols-2 items-center gap-12 min-h-[calc(100vh-10rem)] overflow-hidden"
+  >
+    <div class="text-center md:text-left">
+      <div
+        class="inline-block bg-[#c5dd5c] text-black px-4 py-1 mb-6 border-2 border-black shadow-[3px_3px_0_0_#000] animate-fade-in-up"
+        style="animation-delay: 0.2s;"
+      >
+        <p class="font-mono text-sm font-bold">Hello, I'm Bolt Guo</p>
+      </div>
+
+      <h1
+        class="text-5xl md:text-7xl font-extrabold font-mono tracking-tighter mb-6 animate-fade-in-up"
+        style="animation-delay: 0.4s;"
+      >
+        Frontend Developer & AI
+      </h1>
+
+      <p
+        class="text-lg text-gray-700 mb-10 animate-fade-in-up"
+        style="animation-delay: 0.6s;"
+      >
+        As a frontend developer, I am dedicated to sculpting fluid and elegant
+        user interfaces. Embracing AI, I am fascinated by exploring the infinite
+        possibilities it unlocks.
+      </p>
+
+      <div
+        class="flex justify-center md:justify-start items-center gap-4 flex-wrap animate-fade-in-up"
+        style="animation-delay: 0.8s;"
+      >
+        <a
+          href="/works"
+          class="inline-flex items-center justify-center rounded-lg border-2 border-black px-6 py-3 text-center no-underline shadow-[4px_4px_0px_rgb(0,0,0)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[3px_3px_0px_rgb(0,0,0)] active:translate-x-[2px] active:translate-y-[2px] bg-[#d8d2f0] text-black w-fit focus:outline-none transition-all"
+        >
+          View Works
+        </a>
+        <a
+          href="/blog"
+          class="inline-flex items-center justify-center rounded-lg border-2 border-black px-6 py-3 text-center no-underline shadow-[4px_4px_0px_rgb(0,0,0)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[3px_3px_0px_rgb(0,0,0)] active:translate-x-[2px] active:translate-y-[2px] bg-white text-black w-fit focus:outline-none transition-all"
+        >
+          Read Blog
+        </a>
+      </div>
+    </div>
+
+    <div class="hidden md:block animate-fade-in" style="animation-delay: 0.4s;">
+      <div class="w-full h-96 bg-[#d8d2f0] border-2 border-black rounded-lg">
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+  }
+</style>

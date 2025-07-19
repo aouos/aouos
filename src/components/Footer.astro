@@ -1,0 +1,60 @@
+---
+import { Mail, Twitter, Instagram, Youtube } from '@lucide/astro';
+
+const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+  {
+    href: 'mailto:bolt@aouos.com',
+    label: 'Email',
+    Icon: Mail,
+    target: '_self',
+  },
+  {
+    href: 'https://x.com/aouocode',
+    label: 'Twitter',
+    Icon: Twitter,
+    target: '_blank',
+  },
+  {
+    href: 'https://instagram.com/aouocode',
+    label: 'Instagram',
+    Icon: Instagram,
+    target: '_blank',
+  },
+  {
+    href: 'https://youtube.com/@aouos',
+    label: 'YouTube',
+    Icon: Youtube,
+    target: '_blank',
+  },
+];
+---
+
+<footer class="bg-white border-t-2 border-black py-8 px-4 sm:px-6 lg:px-8">
+  <div
+    class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6"
+  >
+    <div class="text-center md:text-left">
+      <p class="text-sm font-mono">
+        © {currentYear} AOUOS. All Rights Reserved.
+      </p>
+    </div>
+
+    <div class="flex items-center gap-4">
+      {
+        socialLinks.map(({ href, label, Icon, target }) => (
+          <a
+            href={href}
+            target={target}
+            rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+            aria-label={label}
+            class="inline-flex items-center justify-center p-2 rounded-lg border-2 border-black cursor-pointer transition-all shadow-[4px_4px_0px_rgb(0,0,0)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[3px_3px_0px_rgb(0,0,0)]"
+          >
+            <Icon class="h-6 w-6" />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</footer>
