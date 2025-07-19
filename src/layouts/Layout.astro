@@ -13,12 +13,11 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
   </head>
   <body>
     <Header />
-
-    <main class="max-w-7xl mx-auto pt-24 px-4 lg:px-8 min-h-screen">
+    <main class="max-w-7xl mx-auto pt-24 px-4 lg:px-8 min-h-dvh">
       <slot />
     </main>
 

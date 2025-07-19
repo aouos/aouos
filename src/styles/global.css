@@ -1,5 +1,24 @@
 @import 'tailwindcss';
 
+html,
+body {
+  overscroll-behavior: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 @layer components {
   .primary-button {
     @apply inline-flex items-center justify-center p-2 rounded-lg border-2 border-black shadow-[4px_4px_0px_rgb(0,0,0)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[3px_3px_0px_rgb(0,0,0)] transition-all cursor-pointer;
