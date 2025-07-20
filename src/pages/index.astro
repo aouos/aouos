@@ -36,18 +36,20 @@ import Layout from '../layouts/Layout.astro';
       >
         <a
           href="/works"
-          class="primary-button active-button px-6 py-3 bg-purple-new"
+          class="x-style x-hover x-active x-wrapper px-6 py-3 bg-purple-new"
         >
           View Works
         </a>
-        <a href="/blog" class="primary-button active-button px-6 py-3">
+        <a href="/blog" class="x-style x-hover x-active x-wrapper px-6 py-3">
           Read Blog
         </a>
       </div>
     </div>
 
-    <div class="hidden md:block animate-fade-in" style="animation-delay: 0.4s;">
-      <div class="w-full h-96 bg-purple-new border-2 rounded-lg"></div>
+    <div class="hidden md:block animate-fade-in" style="animation-delay: 0.2s;">
+      <div class="w-full hover:scale-102 transition-transform duration-300">
+        <img src="/cover.svg" alt="logo" />
+      </div>
     </div>
   </div>
 </Layout>
@@ -79,7 +81,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .animate-fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
+    animation: fadeIn 2s ease-in-out forwards;
     opacity: 0;
   }
 </style>

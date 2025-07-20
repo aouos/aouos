@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import BlogCard from '../../components/BlogCard.astro';
 
 const allPosts = await getCollection('blog');
 const sortedPosts = allPosts.sort(
@@ -9,83 +10,9 @@ const sortedPosts = allPosts.sort(
 ---
 
 <Layout title="Blog" description="my blog posts">
-  <h1>Blog Posts</h1>
+  <h1 class="mt-8 mb-12 text-left text-5xl font-extrabold font-mono">Blog</h1>
 
-  <div class="posts-list">
-    {
-      sortedPosts.map((post) => (
-        <article class="post-item">
-          <h2>
-            <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-          </h2>
-          <p class="description">{post.data.description}</p>
-          <div class="post-meta">
-            <time>{post.data.pubDate.toLocaleDateString('zh-CN')}</time>
-            {post.data.tags && (
-              <div class="tags">
-                {post.data.tags.map((tag) => (
-                  <span class="tag">#{tag}</span>
-                ))}
-              </div>
-            )}
-          </div>
-        </article>
-      ))
-    }
+  <div class="x-container grid gap-8 lg:grid-cols-2">
+    {sortedPosts.map((post, index) => <BlogCard post={post} />)}
   </div>
 </Layout>
-
-<style>
-  .posts-list {
-    max-width: 700px;
-  }
-
-  .post-item {
-    margin-bottom: 2.5rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #eee;
-  }
-
-  .post-item:last-child {
-    border-bottom: none;
-  }
-
-  .post-item h2 {
-    margin: 0 0 0.5rem 0;
-  }
-
-  .post-item a {
-    text-decoration: none;
-    color: #333;
-  }
-
-  .post-item a:hover {
-    color: #0066cc;
-  }
-
-  .description {
-    color: #666;
-    margin: 0.5rem 0;
-  }
-
-  .post-meta {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 0.9rem;
-    color: #666;
-  }
-
-  .tags {
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .tag {
-    background: #e1f5fe;
-    color: #0277bd;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.8rem;
-  }
-</style>

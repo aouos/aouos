@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
 html,
 body {
@@ -19,20 +20,41 @@ body {
   background: transparent;
 }
 
-@layer components {
-  .primary-button {
-    @apply inline-flex items-center justify-center p-2 rounded-lg border-2 border-black shadow-[4px_4px_0px_rgb(0,0,0)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[3px_3px_0px_rgb(0,0,0)] transition-all cursor-pointer;
-  }
-
-  .active-button {
-    @apply active:translate-x-[2px] active:translate-y-[2px];
-  }
-}
-
 @utility bg-purple-new {
   background-color: #d8d2f0;
 }
 
 @utility bg-green-new {
   background-color: #c5dd5c;
+}
+
+@utility bg-pink-new {
+  background-color: #f9c5d5;
+}
+
+@layer components {
+  /* main style */
+  .x-style {
+    @apply p-2  border-2 border-black shadow-[4px_4px_0px_rgb(0,0,0)] rounded-lg;
+  }
+
+  /* base container */
+  .x-container {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* flex wrap */
+  .x-wrapper {
+    @apply inline-flex items-center justify-center text-base;
+  }
+
+  /* hover style */
+  .x-hover {
+    @apply hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[3px_3px_0px_rgb(0,0,0)] transition-all;
+  }
+
+  /* active style */
+  .x-active {
+    @apply active:translate-x-[2px] active:translate-y-[2px];
+  }
 }
