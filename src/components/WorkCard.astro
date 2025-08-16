@@ -1,0 +1,64 @@
+---
+import { Github, ArrowUpRight } from '@lucide/astro';
+
+interface Project {
+  title: string;
+  description: string;
+  cover: string;
+  liveUrl?: string;
+  githubUrl?: string;
+}
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+const { title, description, cover, liveUrl, githubUrl } = project;
+---
+
+<article class="x-style x-hover flex flex-col border-2 border-black rounded-lg">
+  <!-- 图片 Cover -->
+  <div class="aspect-video w-full overflow-hidden rounded-t-lg">
+    <img
+      src={cover}
+      alt=`${title} 的封面图`
+      class="w-full h-full object-cover"
+    />
+  </div>
+
+  <div class="p-6 flex flex-col flex-grow">
+    <h3 class="text-2xl font-bold mb-2">{title}</h3>
+
+    <p class="text-base mb-4 flex-grow">{description}</p>
+
+    <div class="flex justify-end items-center gap-4 mt-auto pt-2">
+      {
+        liveUrl && (
+          <a
+            href={liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="x-button x-wrapper px-6 py-3 bg-pink-new"
+          >
+            <ArrowUpRight class="h-5 w-5 mr-2" />
+            <span>Live Demo</span>
+          </a>
+        )
+      }
+      {
+        githubUrl && (
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="x-button x-wrapper px-6 py-3"
+          >
+            <Github class="h-5 w-5 mr-2" />
+            <span>GitHub</span>
+          </a>
+        )
+      }
+    </div>
+  </div>
+</article>

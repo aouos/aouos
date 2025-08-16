@@ -17,10 +17,14 @@ const { title, description } = Astro.props;
   </head>
   <body>
     <Header />
-    <main class="x-container pt-24 px-4 lg:px-8 min-h-dvh">
-      <slot />
-    </main>
+    <div class="h-dvh overflow-y-auto">
+      <main
+        class="x-container pt-20 pb-24 px-8 md:px-13 min-h-[calc(100dvh-120px)]"
+      >
+        <slot />
+      </main>
 
-    <Footer />
+      <Footer />
+    </div>
   </body>
 </html>

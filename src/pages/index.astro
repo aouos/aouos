@@ -1,14 +1,25 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+import WorkCard from '../components/WorkCard.astro';
+import BlogCard from '../components/BlogCard.astro';
+import works from '../content/works.json';
+
+const latestWorks = works.slice(0, 4);
+
+const latestPosts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
 ---
 
 <Layout title="AOUOS">
-  <div
-    class="grid md:grid-cols-2 items-center gap-12 min-h-[calc(100vh-10rem)] overflow-hidden"
+  <section
+    id="hero"
+    class="grid md:grid-cols-2 items-center gap-12 min-h-[calc(100dvh-80px)]"
   >
     <div class="text-center md:text-left">
       <div
-        class="inline-block bg-green-new px-4 py-1 mb-6 border-2 shadow-[3px_3px_0_0_#000] animate-fade-in-up"
+        class="inline-block bg-green-new px-4 py-1 mb-6 border-2 shadow-[4px_4px_0_0_#000] animate-fade-in-up"
         style="animation-delay: 0.2s;"
       >
         <p class="font-mono text-sm font-bold">Hello, I'm Bolt Guo</p>
@@ -34,15 +45,10 @@ import Layout from '../layouts/Layout.astro';
         class="flex justify-center md:justify-start items-center gap-4 flex-wrap animate-fade-in-up"
         style="animation-delay: 0.8s;"
       >
-        <a
-          href="/works"
-          class="x-style x-hover x-active x-wrapper px-6 py-3 bg-purple-new"
-        >
+        <a href="/works" class="x-button px-6 py-3 bg-purple-new">
           View Works
         </a>
-        <a href="/blog" class="x-style x-hover x-active x-wrapper px-6 py-3">
-          Read Blog
-        </a>
+        <a href="/blog" class="x-button px-6 py-3"> Read Blog </a>
       </div>
     </div>
 
@@ -51,7 +57,25 @@ import Layout from '../layouts/Layout.astro';
         <img src="/cover.svg" alt="logo" />
       </div>
     </div>
-  </div>
+  </section>
+
+  <section id="work-list" class="py-16 md:py-24">
+    <h2 class="text-4xl font-bold mb-12 text-center font-mono">
+      Featured Works
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {latestWorks.map((project) => <WorkCard project={project} />)}
+    </div>
+  </section>
+
+  <section id="blog-list" class="py-16 md:py-24">
+    <h2 class="text-4xl font-bold mb-12 text-center font-mono">Blogs</h2>
+
+    <div class="grid grid-cols-1 gap-8">
+      {latestPosts.map((post) => <BlogCard post={post} />)}
+    </div>
+  </section>
 </Layout>
 
 <style>

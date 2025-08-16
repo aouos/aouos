@@ -3,7 +3,7 @@
 
 html,
 body {
-  overscroll-behavior: none;
+  overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -33,11 +33,6 @@ body {
 }
 
 @layer components {
-  /* main style */
-  .x-style {
-    @apply p-2  border-2 border-black shadow-[4px_4px_0px_rgb(0,0,0)] rounded-lg;
-  }
-
   /* base container */
   .x-container {
     @apply max-w-7xl mx-auto;
@@ -48,13 +43,13 @@ body {
     @apply inline-flex items-center justify-center text-base;
   }
 
-  /* hover style */
-  .x-hover {
-    @apply hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[3px_3px_0px_rgb(0,0,0)] transition-all;
+  /* icon style */
+  .x-icon {
+    @apply p-2 border-2 border-black rounded-lg cursor-pointer;
   }
 
-  /* active style */
-  .x-active {
-    @apply active:translate-x-[2px] active:translate-y-[2px];
+  /* button style */
+  .x-button {
+    @apply p-2 border-2 border-black rounded-lg shadow-[4px_4px_0px_rgb(0,0,0)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-[0px_0px_0px] transition-all cursor-pointer;
   }
 }

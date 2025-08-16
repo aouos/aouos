@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Project Alpha",
+    "description": "This is the first project.",
+    "cover": "https://placehold.co/600x400/png",
+    "liveUrl": "https://example.com",
+    "githubUrl": "https://github.com/example/project-alpha"
+  },
+  {
+    "title": "Project Beta",
+    "description": "This is the second project.",
+    "cover": "https://placehold.co/600x400/png",
+    "liveUrl": "https://example.com",
+    "githubUrl": "https://github.com/example/project-beta"
+  },
+  {
+    "title": "Project Gamma",
+    "description": "This is the third project.",
+    "cover": "https://placehold.co/600x400/png",
+    "liveUrl": "https://example.com",
+    "githubUrl": "https://github.com/example/project-gamma"
+  },
+  {
+    "title": "Project Delta",
+    "description": "This is the fourth project.",
+    "cover": "https://placehold.co/600x400/png",
+    "liveUrl": "https://example.com",
+    "githubUrl": "https://github.com/example/project-delta"
+  },
+  {
+    "title": "Project Epsilon",
+    "description": "This is the fifth project.",
+    "cover": "https://placehold.co/600x400/png",
+    "liveUrl": "https://example.com",
+    "githubUrl": "https://github.com/example/project-epsilon"
+  },
+  {
+    "title": "Project Zeta",
+    "description": "This is the sixth project.",
+    "cover": "https://placehold.co/600x400/png",
+    "liveUrl": "https://example.com",
+    "githubUrl": "https://github.com/example/project-zeta"
+  }
+]
