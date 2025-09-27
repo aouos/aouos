@@ -1,6 +1,5 @@
 ---
 import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const { title, description } = Astro.props;
@@ -16,15 +15,8 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
   </head>
   <body>
-    <Header />
-    <div class="h-dvh overflow-y-auto">
-      <main
-        class="x-container pt-20 pb-24 px-8 md:px-13 min-h-[calc(100dvh-120px)]"
-      >
-        <slot />
-      </main>
-
-      <Footer />
-    </div>
+    <main>
+      <slot />
+    </main>
   </body>
 </html>

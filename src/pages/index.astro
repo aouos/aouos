@@ -1,111 +1,158 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import WorkCard from '../components/WorkCard.astro';
-import BlogCard from '../components/BlogCard.astro';
-import works from '../content/works.json';
-
-const latestWorks = works.slice(0, 4);
-
-const latestPosts = (await getCollection('blog'))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 3);
 ---
 
 <Layout title="AOUOS">
-  <section
-    id="hero"
-    class="grid md:grid-cols-2 items-center gap-12 min-h-[calc(100dvh-80px)]"
-  >
-    <div class="text-center md:text-left">
-      <div
-        class="inline-block bg-green-new px-4 py-1 mb-6 border-2 shadow-[4px_4px_0_0_#000] animate-fade-in-up"
-        style="animation-delay: 0.2s;"
-      >
-        <p class="font-mono text-sm font-bold">Hello, I'm Bolt Guo</p>
-      </div>
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-text">Loading...</div>
+    <div class="loading-bar">
+      <div class="loading-fill"></div>
+    </div>
+  </div>
 
-      <h1
-        class="text-5xl md:text-7xl font-extrabold font-mono tracking-tighter mb-6 animate-fade-in-up"
-        style="animation-delay: 0.4s;"
-      >
-        Frontend Developer & AI
-      </h1>
-
-      <p
-        class="text-lg text-gray-700 mb-10 animate-fade-in-up"
-        style="animation-delay: 0.6s;"
-      >
-        As a frontend developer, I am dedicated to sculpting fluid and elegant
-        user interfaces. Embracing AI, I am fascinated by exploring the infinite
-        possibilities it unlocks.
-      </p>
-
-      <div
-        class="flex justify-center md:justify-start items-center gap-4 flex-wrap animate-fade-in-up"
-        style="animation-delay: 0.8s;"
-      >
-        <a href="/works" class="x-button px-6 py-3 bg-purple-new">
-          View Works
-        </a>
-        <a href="/blog" class="x-button px-6 py-3"> Read Blog </a>
+  <nav class="nav hidden" id="navbar">
+    <div class="nav-container">
+      <div class="logo">AOUOS</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
+  </nav>
 
-    <div class="hidden md:block animate-fade-in" style="animation-delay: 0.2s;">
-      <div class="w-full hover:scale-102 transition-transform duration-300">
-        <img src="/cover.svg" alt="logo" />
+  <main class="content hidden" id="mainContent">
+    <section class="section" id="home">
+      <div class="hero">
+        <h1>Frontend & AI Engineer</h1>
+        <p class="sub-heading">
+          Shipping thoughtful web experiences with a little AI backup
+        </p>
+        <p>
+          I build polished interfaces on a foundation of HTML, CSS, and
+          JavaScript, layering in responsive details and AI tricks wherever they
+          genuinely help.
+        </p>
+        <a href="#work" class="cta-button">Explore the Work</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="work-list" class="py-16 md:py-24">
-    <h2 class="text-4xl font-bold mb-12 text-center font-mono">
-      Featured Works
-    </h2>
+    <section class="section about" id="about">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>
+            I'm a frontend engineer who keeps one eye on product feel and the
+            other on clean code, taking web apps and SPAs from sketch to launch
+            without losing the fun details.
+          </p>
+          <p>
+            Living inside the Vue stack (Vue 2/3, Router, Pinia), honing
+            responsive layouts, and tuning Webpack or Vite means I can untangle
+            performance hiccups and keep the build pipeline friendly for the
+            whole crew.
+          </p>
+          <p>
+            I keep poking at the overlap between frontend and AI, experimenting
+            with AI-assisted code, data-informed UX, and real-world uses of
+            those trusty algorithms to make products feel smarter.
+          </p>
+          <div class="skills">
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">Vue</span>
+            <span class="skill">Pinia</span>
+            <span class="skill">React</span>
+            <span class="skill">Three.js</span>
+            <span class="skill">Webpack</span>
+            <span class="skill">Vite</span>
+            <span class="skill">AI Tooling</span>
+          </div>
+        </div>
+        <div class="about-visual"></div>
+      </div>
+    </section>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {latestWorks.map((project) => <WorkCard project={project} />)}
-    </div>
-  </section>
+    <section class="work" id="work">
+      <div class="work-container">
+        <h2>Signature Work</h2>
+        <div class="project-grid">
+          <div class="project-card">
+            <h3>Generative Journey Studio</h3>
+            <p>
+              Concept-to-interface pipeline that lets product teams sketch ideas
+              in natural language and see pixel-perfect UI drafts in seconds.
+            </p>
+            <div class="tech-stack">
+              <span class="tech">Next.js</span>
+              <span class="tech">Tailwind</span>
+              <span class="tech">OpenAI API</span>
+            </div>
+          </div>
 
-  <section id="blog-list" class="py-16 md:py-24">
-    <h2 class="text-4xl font-bold mb-12 text-center font-mono">Blogs</h2>
+          <div class="project-card">
+            <h3>Insight Canvas</h3>
+            <p>
+              Real-time dashboard that blends WebGL visuals with AI summaries so
+              operators can respond before the usual alerts even fire.
+            </p>
+            <div class="tech-stack">
+              <span class="tech">WebGL</span>
+              <span class="tech">D3.js</span>
+              <span class="tech">LangChain</span>
+            </div>
+          </div>
 
-    <div class="grid grid-cols-1 gap-8">
-      {latestPosts.map((post) => <BlogCard post={post} />)}
-    </div>
-  </section>
+          <div class="project-card">
+            <h3>Immersive Story Trails</h3>
+            <p>
+              Scroll-driven narrative experience where 3D scenes and
+              AI-personalized content adapt to each visitor's context without
+              losing the handcrafted feel.
+            </p>
+            <div class="tech-stack">
+              <span class="tech">Three.js</span>
+              <span class="tech">GSAP</span>
+              <span class="tech">TypeScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="contact-content">
+        <h2>Let's Build What's Next</h2>
+        <p class="sub-heading">From idea doodles to polished launches</p>
+        <p>
+          Got a web project, an AI experiment, or something in between? I'm up
+          for brainstorming, prototyping, and shipping it together.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:aouocode@gmail.com" class="contact-link">Email</a>
+          <a href="https://github.com/aouos" class="contact-link">GitHub</a>
+          <a href="https://www.youtube.com/@vizlearnapp" class="contact-link">
+            YouTube
+          </a>
+          <a href="https://x.com/bolt_guo" class="contact-link">Twitter</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script is:inline>
+    const loadingScreen = document.getElementById('loadingScreen');
+    const navbar = document.getElementById('navbar');
+    const mainContent = document.getElementById('mainContent');
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        loadingScreen.classList.add('hidden');
+        navbar.classList.remove('hidden');
+        mainContent.classList.remove('hidden');
+      }, 1700);
+    });
+  </script>
 </Layout>
-
-<style>
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  .animate-fade-in-up {
-    animation: fadeInUp 0.8s ease-out forwards;
-    opacity: 0;
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 2s ease-in-out forwards;
-    opacity: 0;
-  }
-</style>
