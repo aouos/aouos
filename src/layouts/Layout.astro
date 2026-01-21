@@ -1,5 +1,4 @@
 ---
-import Header from '../components/Header.astro';
 import '../styles/global.css';
 
 const { title, description } = Astro.props;
@@ -13,6 +12,20 @@ const { title, description } = Astro.props;
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link
+      rel="preload"
+      href="/fonts/inter-v12-latin-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/inter-v12-latin-600.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
   </head>
   <body>
     <main>

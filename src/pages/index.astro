@@ -1,158 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Nav from '../components/home/Nav.astro';
+import Hero from '../components/home/Hero.astro';
+import Projects from '../components/home/Projects.astro';
+import Blog from '../components/home/Blog.astro';
+import HomeFooter from '../components/home/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const blogPosts = (await getCollection('blog'))
+  .sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+  )
+  .slice(0, 3)
+  .map((entry) => ({
+    slug: entry.slug,
+    title: entry.data.title,
+    description: entry.data.description,
+    date: entry.data.date,
+  }));
 ---
 
-<Layout title="AOUOS">
-  <div class="loading-screen" id="loadingScreen">
-    <div class="loading-text">Loading...</div>
-    <div class="loading-bar">
-      <div class="loading-fill"></div>
+<Layout
+  title="BoltGuo Personal Portfolio Home"
+  description="BoltGuo — frontend developer and AI explorer crafting minimalist digital experiences."
+>
+  <div
+    class="bg-background-light relative min-h-screen overflow-x-hidden text-gray-900 transition-colors duration-300"
+  >
+    <div
+      class="bg-grid-light bg-grid pointer-events-none fixed inset-0 z-0 opacity-40"
+    >
     </div>
+    <Nav />
+    <Hero />
+    <Projects />
+    <Blog posts={blogPosts} />
+    <HomeFooter />
   </div>
-
-  <nav class="nav hidden" id="navbar">
-    <div class="nav-container">
-      <div class="logo">AOUOS</div>
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  <main class="content hidden" id="mainContent">
-    <section class="section" id="home">
-      <div class="hero">
-        <h1>Frontend & AI Engineer</h1>
-        <p class="sub-heading">
-          Shipping thoughtful web experiences with a little AI backup
-        </p>
-        <p>
-          I build polished interfaces on a foundation of HTML, CSS, and
-          JavaScript, layering in responsive details and AI tricks wherever they
-          genuinely help.
-        </p>
-        <a href="#work" class="cta-button">Explore the Work</a>
-      </div>
-    </section>
-
-    <section class="section about" id="about">
-      <div class="about-content">
-        <div class="about-text">
-          <h2>About Me</h2>
-          <p>
-            I'm a frontend engineer who keeps one eye on product feel and the
-            other on clean code, taking web apps and SPAs from sketch to launch
-            without losing the fun details.
-          </p>
-          <p>
-            Living inside the Vue stack (Vue 2/3, Router, Pinia), honing
-            responsive layouts, and tuning Webpack or Vite means I can untangle
-            performance hiccups and keep the build pipeline friendly for the
-            whole crew.
-          </p>
-          <p>
-            I keep poking at the overlap between frontend and AI, experimenting
-            with AI-assisted code, data-informed UX, and real-world uses of
-            those trusty algorithms to make products feel smarter.
-          </p>
-          <div class="skills">
-            <span class="skill">HTML</span>
-            <span class="skill">CSS</span>
-            <span class="skill">JavaScript</span>
-            <span class="skill">Vue</span>
-            <span class="skill">Pinia</span>
-            <span class="skill">React</span>
-            <span class="skill">Three.js</span>
-            <span class="skill">Webpack</span>
-            <span class="skill">Vite</span>
-            <span class="skill">AI Tooling</span>
-          </div>
-        </div>
-        <div class="about-visual"></div>
-      </div>
-    </section>
-
-    <section class="work" id="work">
-      <div class="work-container">
-        <h2>Signature Work</h2>
-        <div class="project-grid">
-          <div class="project-card">
-            <h3>Generative Journey Studio</h3>
-            <p>
-              Concept-to-interface pipeline that lets product teams sketch ideas
-              in natural language and see pixel-perfect UI drafts in seconds.
-            </p>
-            <div class="tech-stack">
-              <span class="tech">Next.js</span>
-              <span class="tech">Tailwind</span>
-              <span class="tech">OpenAI API</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <h3>Insight Canvas</h3>
-            <p>
-              Real-time dashboard that blends WebGL visuals with AI summaries so
-              operators can respond before the usual alerts even fire.
-            </p>
-            <div class="tech-stack">
-              <span class="tech">WebGL</span>
-              <span class="tech">D3.js</span>
-              <span class="tech">LangChain</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <h3>Immersive Story Trails</h3>
-            <p>
-              Scroll-driven narrative experience where 3D scenes and
-              AI-personalized content adapt to each visitor's context without
-              losing the handcrafted feel.
-            </p>
-            <div class="tech-stack">
-              <span class="tech">Three.js</span>
-              <span class="tech">GSAP</span>
-              <span class="tech">TypeScript</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section contact" id="contact">
-      <div class="contact-content">
-        <h2>Let's Build What's Next</h2>
-        <p class="sub-heading">From idea doodles to polished launches</p>
-        <p>
-          Got a web project, an AI experiment, or something in between? I'm up
-          for brainstorming, prototyping, and shipping it together.
-        </p>
-        <div class="contact-links">
-          <a href="mailto:aouocode@gmail.com" class="contact-link">Email</a>
-          <a href="https://github.com/aouos" class="contact-link">GitHub</a>
-          <a href="https://www.youtube.com/@vizlearnapp" class="contact-link">
-            YouTube
-          </a>
-          <a href="https://x.com/bolt_guo" class="contact-link">Twitter</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <script is:inline>
-    const loadingScreen = document.getElementById('loadingScreen');
-    const navbar = document.getElementById('navbar');
-    const mainContent = document.getElementById('mainContent');
-
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        loadingScreen.classList.add('hidden');
-        navbar.classList.remove('hidden');
-        mainContent.classList.remove('hidden');
-      }, 1700);
-    });
-  </script>
 </Layout>

@@ -1,0 +1,33 @@
+---
+import { Github } from '@lucide/astro';
+---
+
+<nav
+  class="nav-surface border-border-light fixed top-0 z-50 w-full border-b backdrop-blur-sm"
+>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <a class="flex items-center transition-colors" href="/">
+        <span class="mr-2 font-mono text-xs text-gray-400">01</span>
+        <span class="text-lg font-bold tracking-tight uppercase">AOUOS</span>
+      </a>
+      <div class="hidden space-x-8 text-sm font-medium md:flex">
+        <a class="transition-colors" href="/projects">
+          <span class="mr-1 font-mono text-xs text-gray-400">02</span>PROJECTS
+        </a>
+        <a class="transition-colors" href="/blog">
+          <span class="mr-1 font-mono text-xs text-gray-400">03</span>BLOG
+        </a>
+      </div>
+      <a
+        class="hover:border-primary flex items-center justify-center rounded-md p-2 text-gray-700 transition-colors"
+        href="https://github.com/aouos"
+        target="_blank"
+        rel="noreferrer"
+        title="GitHub"
+      >
+        <Github class="h-5 w-5" aria-hidden="true" />
+      </a>
+    </div>
+  </div>
+</nav>

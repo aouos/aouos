@@ -1,0 +1,117 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/home/Nav.astro';
+import {
+  Bot,
+  LayoutDashboard,
+  Globe2,
+  Puzzle,
+  ArrowRight,
+} from '@lucide/astro';
+
+const projects = [
+  {
+    id: '01',
+    title: 'AI Chat Interface',
+    description:
+      'A minimalist chat UI for interacting with local LLMs, featuring markdown support and code highlighting.',
+    tech: ['React', 'WebSockets'],
+    Icon: Bot,
+    link: 'https://github.com', // replace with real link
+  },
+  {
+    id: '02',
+    title: 'SaaS Dashboard',
+    description:
+      'Responsive admin dashboard template with dark mode support, data visualization charts, and user management.',
+    tech: ['Vue.js', 'Tailwind CSS'],
+    Icon: LayoutDashboard,
+    link: 'https://github.com', // replace with real link
+  },
+  {
+    id: '03',
+    title: 'Portfolio v1',
+    description:
+      'My first portfolio site built to learn Astro. Highly optimized for performance with a perfect Lighthouse score.',
+    tech: ['Astro', 'Performance'],
+    Icon: Globe2,
+    link: 'https://github.com', // replace with real link
+  },
+  {
+    id: '04',
+    title: 'Task Manager',
+    description:
+      'A focused todo list application with drag-and-drop prioritization and local storage persistence.',
+    tech: ['JavaScript', 'DnD API'],
+    Icon: Puzzle,
+    link: 'https://github.com', // replace with real link
+  },
+];
+---
+
+<Layout
+  title="Projects — BoltGuo"
+  description="Project work by BoltGuo: web, AI, dashboards, and tooling."
+>
+  <div
+    class="bg-background-light relative min-h-screen overflow-x-hidden text-gray-900 transition-colors duration-300"
+  >
+    <Nav />
+
+    <section class="relative z-10 pt-32 pb-16 lg:pt-44">
+      <div
+        class="mx-auto flex max-w-7xl flex-col gap-8 px-4 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:px-8"
+      >
+        <div class="space-y-4">
+          <h1
+            class="text-4xl font-bold tracking-tight text-gray-900 lg:text-5xl"
+          >
+            Building for the web &amp; AI
+          </h1>
+          <p class="max-w-2xl text-lg text-gray-600">
+            Interfaces, dashboards, and tools designed to stay simple, fast, and
+            reliable. Each project balances visual clarity with developer
+            ergonomics.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative z-10 pb-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {
+            projects.map((project) => (
+              <a
+                class="group relative border border-gray-200 p-8 transition-colors duration-300 hover:bg-white"
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div class="plus-marker absolute -top-[6px] -left-[6px] z-20" />
+                <div class="plus-marker absolute -right-[6px] -bottom-[6px] z-20" />
+                <div class="mb-6 flex items-start justify-between">
+                  <span class="font-mono text-xs text-gray-400">
+                    {project.id}
+                  </span>
+                  <project.Icon class="h-5 w-5 text-gray-400 transition-colors" />
+                </div>
+                <h3 class="mb-3 text-lg font-bold text-gray-900">
+                  {project.title}
+                </h3>
+                <p class="mb-8 text-sm leading-relaxed text-gray-500">
+                  {project.description}
+                </p>
+                <div class="flex flex-wrap gap-2 font-mono text-[10px] tracking-wider text-gray-400 uppercase">
+                  {project.tech.map((item) => (
+                    <span class="border border-gray-200 px-2 py-1">{item}</span>
+                  ))}
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

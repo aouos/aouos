@@ -1,0 +1,65 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/home/Nav.astro';
+import { ArrowLeft } from '@lucide/astro';
+import { getEntryBySlug, getCollection } from 'astro:content';
+
+const { slug } = Astro.params;
+const post = slug ? await getEntryBySlug('blog', slug) : null;
+
+if (!post) {
+  throw new Error(`Blog post not found for slug: ${slug}`);
+}
+
+const { Content } = await post.render();
+const data = post.data;
+const formatDate = (value: Date) =>
+  value.toLocaleDateString('en-US', {
+    month: 'short',
+    day: '2-digit',
+    year: 'numeric',
+  });
+
+export async function getStaticPaths() {
+  const blogPosts = await getCollection('blog');
+  return blogPosts.map((entry) => ({
+    params: { slug: entry.slug },
+  }));
+}
+---
+
+<Layout title={data.title} description={data.description}>
+  <div
+    class="bg-background-light relative min-h-screen overflow-x-hidden text-gray-900 transition-colors duration-300"
+  >
+    <Nav />
+
+    <article class="relative z-10 pt-24 pb-20 lg:pt-30">
+      <div class="mx-auto max-w-3xl space-y-8 px-4 sm:px-6 lg:px-8">
+        <a
+          class="inline-flex items-center text-sm font-medium text-gray-700 transition-colors"
+          href="/blog"
+        >
+          <ArrowLeft class="mr-2 h-4 w-4" />
+          Back to blog
+        </a>
+        <header class="space-y-3">
+          <span class="font-mono text-xs text-gray-400"
+            >{formatDate(data.date)}</span
+          >
+          <h1 class="text-4xl font-bold text-gray-900 lg:text-5xl">
+            {data.title}
+          </h1>
+          <p class="text-lg text-gray-600">
+            {data.description}
+          </p>
+        </header>
+        <hr class="border-gray-200" />
+
+        <div class="prose prose-aouos prose-lg max-w-none">
+          <Content />
+        </div>
+      </div>
+    </article>
+  </div>
+</Layout>

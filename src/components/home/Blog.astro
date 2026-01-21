@@ -1,0 +1,72 @@
+---
+import { ArrowRight } from '@lucide/astro';
+
+interface BlogCard {
+  slug: string;
+  title: string;
+  description: string;
+  date: Date;
+}
+
+const { posts = [] } = Astro.props as { posts?: BlogCard[] };
+
+const formatDate = (value: Date) =>
+  value.toLocaleDateString('en-US', {
+    month: 'short',
+    day: '2-digit',
+    year: 'numeric',
+  });
+---
+
+<section
+  class="bg-background-light relative z-10 overflow-hidden py-24"
+  id="blog"
+>
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <div class="mb-12 text-center">
+      <span class="mb-2 block font-mono text-xs text-gray-400">02 / Blog</span>
+      <h2 class="text-4xl font-bold text-gray-900">Thoughts &amp; Insights</h2>
+    </div>
+
+    {
+      posts.length === 0 ? (
+        <div class="text-center text-sm text-gray-500">No posts yet.</div>
+      ) : (
+        <div class="space-y-10">
+          {posts.map((post) => (
+            <a
+              class="group relative block border border-gray-100 bg-white p-8 transition-colors"
+              href={`/blog/${post.slug}`}
+            >
+              <div class="bg-primary absolute top-0 left-0 h-full w-1 origin-top scale-y-0 transform transition-transform duration-300 group-hover:scale-y-100" />
+              <div class="mb-4 flex flex-col md:flex-row md:items-baseline md:justify-between">
+                <h3 class="text-2xl font-bold text-gray-900 transition-colors">
+                  {post.title}
+                </h3>
+                <span class="mt-2 shrink-0 font-mono text-xs text-gray-400 md:mt-0">
+                  {formatDate(post.date)}
+                </span>
+              </div>
+              <p class="mb-6 leading-relaxed text-gray-600">
+                {post.description}
+              </p>
+              <div class="text-primary flex items-center text-sm font-medium">
+                <span>Read Article</span>
+                <ArrowRight class="ml-2 h-4 w-4" />
+              </div>
+            </a>
+          ))}
+        </div>
+      )
+    }
+
+    <div class="mt-12 text-center">
+      <a
+        class="inline-block border border-gray-300 px-8 py-3 text-sm font-medium transition-colors hover:bg-gray-50"
+        href="/blog"
+      >
+        View All Posts
+      </a>
+    </div>
+  </div>
+</section>
