@@ -37,7 +37,7 @@ export const projects = [
   },
   {
     id: '04',
-    title: 'AOUOS Logo',
+    title: 'AOUOS LOGO',
     description:
       'A dedicated brand asset page for downloading the AOUOS logo in SVG plus transparent and white-background PNG exports in multiple sizes.',
     tech: ['SVG', 'Brand Assets'],
@@ -61,5 +61,14 @@ export const projects = [
     tech: ['React 19', 'VitePress'],
     Icon: Code2,
     link: 'https://react.aouos.com',
+  },
+  {
+    id: '07',
+    title: 'Vue 3 Learning',
+    description:
+      'A project-driven learning system for Vue 3, covering 4 phases from a Todo App to full-stack e-commerce and Vue 3 internals, with deep dives into Composition API throughout.',
+    tech: ['Vue 3', 'VitePress'],
+    Icon: Code2,
+    link: 'https://vue.aouos.com',
   },
 ] as const;

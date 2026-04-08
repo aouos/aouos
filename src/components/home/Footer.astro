@@ -1,3 +1,7 @@
+---
+import { Mail, Youtube, Twitter, Send } from '@lucide/astro';
+---
+
 <footer class="border-border-light relative z-10 border-t bg-white py-16">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="mb-12 grid grid-cols-1 gap-12 md:grid-cols-3 lg:gap-16">
@@ -59,39 +63,43 @@
         <ul class="space-y-4 text-sm">
           <li>
             <a
-              class="hover:text-primary group flex items-center text-gray-500 transition-colors"
-              href="mailto:bolt@aouos.com"
+              class="hover:text-primary group flex items-center gap-2 text-gray-500 transition-colors"
+              href="mailto:hello@aouos.com"
             >
+              <Mail class="h-4 w-4 shrink-0" />
               <span>Email</span>
             </a>
           </li>
           <li>
             <a
-              class="hover:text-primary group flex items-center text-gray-500 transition-colors"
+              class="hover:text-primary group flex items-center gap-2 text-gray-500 transition-colors"
               href="https://www.youtube.com/@boltguo"
               target="_blank"
               rel="noreferrer"
             >
+              <Youtube class="h-4 w-4 shrink-0" />
               <span>Youtube</span>
             </a>
           </li>
           <li>
             <a
-              class="hover:text-primary group flex items-center text-gray-500 transition-colors"
+              class="hover:text-primary group flex items-center gap-2 text-gray-500 transition-colors"
               href="https://x.com/boltguo"
               target="_blank"
               rel="noreferrer"
             >
+              <Twitter class="h-4 w-4 shrink-0" />
               <span>X</span>
             </a>
           </li>
           <li>
             <a
-              class="hover:text-primary group flex items-center text-gray-500 transition-colors"
+              class="hover:text-primary group flex items-center gap-2 text-gray-500 transition-colors"
               href="https://t.me/boltguo"
               target="_blank"
               rel="noreferrer"
             >
+              <Send class="h-4 w-4 shrink-0" />
               <span>Telegram</span>
             </a>
           </li>
@@ -105,3 +113,4 @@
     </div>
   </div>
 </footer>
+

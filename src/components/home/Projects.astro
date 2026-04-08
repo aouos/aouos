@@ -1,8 +1,10 @@
 ---
 import { projects } from '../../data/projects';
 
-const homeProjects = projects.filter(
-  ({ title }) => title !== 'AOUI' && title !== 'AOUOS Logo'
+const HOME_PROJECT_IDS = ['01', '05', '06', '07'];
+
+const homeProjects = HOME_PROJECT_IDS.map(
+  (id) => projects.find((p) => p.id === id)!
 );
 ---
 
@@ -23,11 +25,11 @@ const homeProjects = projects.filter(
         focused productivity utilities to experimental web applications.
       </p>
     </div>
-      <div
-        class="grid grid-cols-1 gap-0 divide-y divide-gray-200 border-t border-b border-gray-200 md:grid-cols-2 md:divide-x md:divide-y-0 lg:grid-cols-4"
-      >
+    <div
+      class="grid grid-cols-1 gap-0 divide-y divide-gray-200 border-t border-b border-gray-200 md:grid-cols-2 md:divide-x md:divide-y-0 lg:grid-cols-4"
+    >
       {
-        homeProjects.map(({ title, description, tech, Icon, link }, index) => (
+        homeProjects.map(({ id, title, description, tech, Icon, link }, index) => (
           <a
             href={link}
             target="_blank"
@@ -39,9 +41,7 @@ const homeProjects = projects.filter(
               <div class="plus-marker absolute -top-[6px] -right-[6px] z-20" />
             )}
             <div class="mb-6 flex items-start justify-between">
-              <span class="font-mono text-xs text-gray-400">
-                {String(index + 1).padStart(2, '0')}
-              </span>
+              <span class="font-mono text-xs text-gray-400">{id}</span>
               <Icon class="h-5 w-5 text-gray-400 transition-colors" />
             </div>
             <h3 class="mb-3 text-lg font-bold text-gray-900">{title}</h3>
